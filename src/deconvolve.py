@@ -263,7 +263,7 @@ class FIRDeconvolution(object):
 			:type covariate: string
 		"""
 		# find the index in the designmatrix of the current covariate
-		this_covariate_index = self.covariates.keys().index(covariate)
+		this_covariate_index = list(self.covariates).index(covariate)
 		return self.betas[int(this_covariate_index*self.deconvolution_interval_size):int((this_covariate_index+1)*self.deconvolution_interval_size)]
 
 	def betas_for_events(self):
